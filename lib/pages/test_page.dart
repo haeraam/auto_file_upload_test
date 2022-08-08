@@ -43,22 +43,23 @@ class _TestPageState extends State<TestPage> {
               children: [
                 ElevatedButton(
                     onPressed: () async {
-                      await Logger.log(action: 'button_click', pageName: 'home_page', detail: 'sub-button01');
+                      print(Logger().hashCode);
+                      await Logger.log(action: 'button_click', pageName: 'test_page', detail: 'sub-button01');
                     },
                     child: const Text('sub page 로깅 버튼1')),
                 ElevatedButton(
                     onPressed: () async {
-                      await Logger.log(action: 'button_click', pageName: 'home_page', detail: 'sub-button02');
+                      await Logger.log(action: 'button_click', pageName: 'test_page', detail: 'sub-button02');
                     },
                     child: const Text('sub page 로깅 버튼2')),
                 ElevatedButton(
                     onPressed: () async {
-                      await Logger.log(action: 'button_click', pageName: 'home_page', detail: 'sub-button03');
+                      await Logger.log(action: 'button_click', pageName: 'test_page', detail: 'sub-button03');
                     },
                     child: const Text('sub page 로깅 버튼3')),
                 ElevatedButton(
                     onPressed: () async {
-                      await Logger.log(action: 'button_click', pageName: 'home_page', detail: 'sub-button04');
+                      await Logger.log(action: 'button_click', pageName: 'test_page', detail: 'sub-button04');
                     },
                     child: const Text('sub page 로깅 버튼4')),
               ],

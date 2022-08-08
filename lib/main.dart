@@ -10,18 +10,14 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  Map isFileUploaded = await Logger.initializeLogger();
+  await Logger.initializeLogger();
   await Logger.log(action: 'app_start', pageName: 'start_page');
   await Logger.log(action: 'page_start', pageName: 'start_page');
-
-  runApp(MyApp(
-    isFileUploaded: isFileUploaded,
-  ));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key, required this.isFileUploaded}) : super(key: key);
-  final Map isFileUploaded;
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -31,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(isFileUploaded: isFileUploaded),
+      home: HomePage(),
     );
   }
 }
